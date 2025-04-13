@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: white;
+        }
+        .btn {
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .approve { background: green; }
+        .reject { background: red; }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        
+        <h2>Fund Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>UTR</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="fundRequests"></tbody>
+        </table>
+        
+        <h2>Withdrawal Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>UPI ID</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="withdrawRequests"></tbody>
+        </table>
+        
+        <h2>Applied Users for Tournaments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>FF ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Tournament</th>
+                </tr>
+            </thead>
+            <tbody id="userApplications"></tbody>
+        </table>
+        
+        <h2>Update User Balance</h2>
+        <input type="text" id="ffId" placeholder="Enter User FF ID">
+        <input type="number" id="newBalance" placeholder="Enter New Balance">
+        <button onclick="updateUserBalance()">Update Balance</button>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
